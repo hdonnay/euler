@@ -4,16 +4,15 @@
 void
 main() {
 	int i, j, x, l, e, max;
-	//char z;
-	char *s, *r;
+	/* 3 digit numbers, so max len is 6, plus \0 */
+	char s[7], r[7];
 	max = 0;
 	for(i=999;i>99;i--){
 		for(j=100;j<1000;j++){
 			x = i*j;
-			s = smprint("%d", x);
-			r = strdup(s);
+			snprint(s, 7, "%d", x);
+			strcpy(r, s);
 			e = strlen(s);
-			/* make some assumptions about ASCII, look away... */
 			for(l=0; l<e; l++){
 				r[l] = s[e-l-1];
 			}
