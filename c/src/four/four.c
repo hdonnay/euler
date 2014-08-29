@@ -11,7 +11,6 @@ main() {
 		for(j=100;j<1000;j++){
 			x = i*j;
 			snprint(s, 7, "%d", x);
-			strcpy(r, s);
 			e = strlen(s);
 			for(l=0; l<e; l++){
 				r[l] = s[e-l-1];
