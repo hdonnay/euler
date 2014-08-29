@@ -1,0 +1,11 @@
+MKSHELL=rc
+
+%: %.c
+	9c -c -o $stem.o $stem.c
+	9l -o $stem $stem.o
+
+all:E:
+	for(f in `{ls}) if(! ~ $f mkfile) mk $f/$f && ./$f/$f
+
+clean:
+	for(f in `{ls}) if(! ~ $f mkfile) rm $f/$f $f/$f.o
